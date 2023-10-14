@@ -1,0 +1,15 @@
+{
+  "descripcion": "Sirena Tarot",
+  "navigacion": [
+    {
+      "titulo": "Servicios",
+      "url": "/",
+      "descripcion": "Servicios de lectura"
+    },
+    {
+      "titulo": "Quien Soy",
+      "url": "/quien-soy",
+      "descripcion": "Quien soy yo"
+    }
+  ]
+}

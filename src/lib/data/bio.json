@@ -1,0 +1,13 @@
+{
+  "descripcion": "Quien Soy",
+  "secciones": [
+    {
+      "titulo": "Yo",
+      "descripcion": "Soy Leila, tarotista y barista durante el dia"
+    },
+    {
+      "titulo": "Yo y el Tarot",
+      "descripcion": "Descubri el tarot durante un viaje a Walmart donde tenia una vision de unas cartas que pueden ayudar a unas"
+    }
+  ]
+}

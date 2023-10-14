@@ -2,8 +2,9 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
+	import nav from '$lib/data/nav.json'
+	import contacto from '$lib/data/contacto.json'
+	import './styles.scss';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -15,17 +16,29 @@
 			analyticsId: data.analyticsId
 		});
 	}
+
+	$: currentNavItem = nav.navigacion.find((nav) => nav.url === $page.url.pathname)
+
 </script>
-
+<svelte:head>
+	<title>{nav.descripcion} - {currentNavItem?.titulo}</title>
+	<meta name="description" content={currentNavItem?.descripcion} />
+</svelte:head>
 <div class="app">
-	<Header />
-
+	<nav>
+		<ul>
+			{#each nav.navigacion as navItem}
+				<li aria-current={($page.url.pathname === navItem.url )? 'true' : undefined}>
+					<a href={navItem.url}>{navItem.titulo}</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
 	<main>
 		<slot />
 	</main>
-
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Llama <b>{contacto.numero}</b> para contactar {contacto.nombre} por una lectura</p>
 	</footer>
 </div>
 
