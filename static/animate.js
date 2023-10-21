@@ -1,5 +1,5 @@
 
-const images = ['tarot-fool.jpeg', 'tarot-magician.jpeg', 'tarot-rose.png']
+const images = ['tarot-fool.jpeg', 'tarot-magician.jpeg', 'tarot-rose.jpeg']
 const interval = 2000
 
 const random = (min, max) =>
