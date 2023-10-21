@@ -1,26 +1,26 @@
-
+# precios en USD
 titulo: "Servicios y Costos"
 descripcion:
   Tarot terapeutico con consultas de psicomagia 
 servicios:
   -
     titulo: "Lectura de presente y futuro"
-    precio: 600
+    precio: 30
     descripcion: ""
   -
     titulo: "Lectura caminos del amor"
-    precio: 400
+    precio: 20
     descripcion: ""
   -
     titulo: "Preguntas expecificas x3"
-    precio: 300
+    precio: 15
     descripcion: ""
   -
     titulo: "Carta astral"
-    precio: 300
+    precio: 15
     descripcion: ""
   -
     titulo: "Psicomagia"
-    precio: 300
+    precio: 15
     descripcion: ""
    
