@@ -10,7 +10,11 @@
 		{#each servicios.servicios as servicio}
 			<li>
 				<h3>{servicio.titulo}</h3>
-				<p>${servicio.precio} pesos Mexicanos</p>
+				<p>
+					${servicio.precio} pesos Mexicanos
+					<br/>
+					o ${Math.round(servicio.precio / 20)} dollares Americanos
+				</p>
 				<p>{servicio.descripcion}</p>
 			</li>
 		{/each}
