@@ -60,7 +60,7 @@
 			</div>
 		</div>
 	</header>
-	<main>
+	<main on:click={() => toggleNav(false)}>
 		<div class="material">
 			<slot />
 		</div>
