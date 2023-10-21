@@ -9,7 +9,8 @@
 	<ul class="lista-estrella">
 		{#each servicios.servicios as servicio}
 			<li>
-				<h3>{servicio.titulo} <small>(${servicio.precio} MXN)</small></h3>
+				<h3>{servicio.titulo}</h3>
+				<p>${servicio.precio} pesos Mexicanos</p>
 				<p>{servicio.descripcion}</p>
 			</li>
 		{/each}
