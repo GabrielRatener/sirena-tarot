@@ -14,11 +14,10 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@fontsource-variable/baloo-bhaina-2": "^5.0.16",
 		"@fontsource/bungee-shade": "^5.0.15",
 		"@fontsource/fira-mono": "^4.5.10",
 		"@fontsource/monoton": "^5.0.15",
-		"@fontsource/pirata-one": "^5.0.8",
-		"@fontsource/saira-stencil-one": "^5.0.15",
 		"@modyfi/vite-plugin-yaml": "^1.0.4",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",

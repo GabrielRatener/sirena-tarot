@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@fontsource-variable/baloo-bhaina-2':
+    specifier: ^5.0.16
+    version: 5.0.16
   '@fontsource/bungee-shade':
     specifier: ^5.0.15
     version: 5.0.15
@@ -12,12 +15,6 @@ devDependencies:
     specifier: ^4.5.10
     version: 4.5.10
   '@fontsource/monoton':
-    specifier: ^5.0.15
-    version: 5.0.15
-  '@fontsource/pirata-one':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/saira-stencil-one':
     specifier: ^5.0.15
     version: 5.0.15
   '@modyfi/vite-plugin-yaml':
@@ -318,6 +315,10 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@fontsource-variable/baloo-bhaina-2@5.0.16:
+    resolution: {integrity: sha512-U9TFfH43j9/9GiGz6Utr4QSVuhizh03vM66bi99USmW6KJX9LPkChGv+vOga+wCl5pVF5YsOfSJOjZzdtwwiQw==}
+    dev: true
+
   /@fontsource/bungee-shade@5.0.15:
     resolution: {integrity: sha512-+5CqTy5WH/C1zrjgUx8h2kEIGOlr53wrRaomrvEFWRH1/bAJSKiJV+X942gBtoI4XHAWuJbmxfHR6PtsLRDmxA==}
     dev: true
@@ -328,14 +329,6 @@ packages:
 
   /@fontsource/monoton@5.0.15:
     resolution: {integrity: sha512-Y2GpXsxinIgybLGIhU3JW6RPY6y38s3n+rzdntQ8zWiqsor6mJP43Wlb+UNxWhK3kPBh54QaqYC7Cc2b8MAqpg==}
-    dev: true
-
-  /@fontsource/pirata-one@5.0.8:
-    resolution: {integrity: sha512-kv+/j0u2Yh8ZQ06t1Jpld/ZPGGZgpKqY6g9nRXJKhRTVmzK7rLwPMolYLJmtSSKKuc8zK7F8660PnBVDN58nfg==}
-    dev: true
-
-  /@fontsource/saira-stencil-one@5.0.15:
-    resolution: {integrity: sha512-YHBstWm/P2eUaRYg+Ix387aGxtjLg4UFjVBNsIOpudOmbSoEj+SzfmDg6MSgyf7duYPQRk4z8i2a3vasvaDjdQ==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.8:
