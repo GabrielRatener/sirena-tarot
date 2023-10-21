@@ -1,134 +1,251 @@
 @import '@fontsource/fira-mono';
+@import '@fontsource/monoton';
 
-$color-theme: #ff3e00;
+$color-theme: #7f142c;
+$color-content-bg: rbga(255, 255, 255, 0.8);
+$color-bg: #000;
+$body-font: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$important-font: 'Fira Mono';
+$title-font: 'Monoton';
 
-nav {
-	ul {
-		list-style-type: none;
+$x-padding: 10px;
+$y-padding: 10px;
+$material-padding: 10px;
 
-		li {
-			display: inline-block;
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+$bp-huge: 1280px;
 
-			a {
-				padding: 10px;
-				display: block;
-				border-bottom: 10px solid transparent;
-				
-				&:hover {
-					text-decoration: none;
+.app {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: $y-padding;
+	width: calc(100% - #{2 * $x-padding});
+	font-family: $body-font;
+}
+
+.material {
+	width: calc(100% - #{2 * $material-padding}) !important;
+	padding: $material-padding;
+	margin-bottom: 10px;
+	background-color: rgba(#fff, 0.8);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-family: $important-font;
+	}
+}
+
+header .material {
+	min-height: 50px;
+}
+
+.flex-spread {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	// font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	font-family: $title-font !important;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 13px;
+	text-decoration-color: $color-theme;
+}
+
+.titulo-pagina {
+	font-family: $title-font !important;
+}
+
+nav ul li a {
+	text-decoration: none;
+	font-family: $important-font;
+}
+
+// non-mobile styles
+@media screen and (min-width: #{$bp-mobile}) {
+	.mobile-only {
+		display: none;
+	}
+
+	nav {
+		ul {
+			list-style-type: none;
+			padding-left: 0px;
+			margin-bottom: 0px;
+
+			li {
+
+				display: inline-block;
+				margin-right: 10px;
+				font-family: $important-font;
+
+				a {
+					padding-bottom: 10px;
+					display: block;
+
+					border-bottom: 10px solid transparent;
+
+					&:hover {
+						border-bottom-color: $color-theme;
+					}
+				}
+
+				&[aria-current=true] a {
 					border-bottom-color: $color-theme;
 				}
-			}
-
-			&[aria-current=true] a {
-				border-bottom-color: $color-theme;
 			}
 		}
 	}
 }
 
-:root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	font-family: var(--font-body);
-	color: var(--color-text);
-}
+@keyframes fall {
+	0% {
+		top: -15%;
+	}
 
-body {
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
-}
-
-h1,
-h2,
-p {
-	font-weight: 400;
-}
-
-p {
-	line-height: 1.5;
-}
-
-a {
-	color: var(--color-theme-1);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
+	100% {
+		top: 115%;
 	}
 }
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#racetrack {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+
+	img {
+		height: 15%;
+		position: absolute;
+		animation-name: fall;
+		animation-duration: 20s;
+	}
+}
+
+#layout-container {
 	position: absolute;
-	width: 1px;
-	white-space: nowrap;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+// mobile styles
+@media screen and (max-width: #{$bp-mobile - 1}) {
+	.title {
+		font-size: 7vw;
+	}
+
+	.nav-icon {
+		height: 35px;
+		width: 35px;
+	}
+
+	nav {
+		width: 100vw;
+		height: 100vw;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background-color: #fff;
+
+		box-shadow: 0px 0px 5px #000;
+
+		.nav-icon {
+			margin: 20px;
+		}
+
+		.title {
+			padding: 20px;
+		}
+
+		.icon-container {
+			& > * {
+				height: 15px;
+				max-height: 15px;
+			}
+		}
+
+		&.hide {
+			display: none;
+		}
+
+		&.reveal {
+			animation-name: fadein;
+			animation-duration: .5s;
+		}
+
+		ul {
+			list-style-type: none;
+			padding-left: 0px;
+
+			li {
+				display: block;
+				width: 100%;
+				padding: 20px;
+				border-top: 1px solid black;
+				width: 100%;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+// :root {
+// 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+// 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+// 	--font-mono: 'Fira Mono', monospace;
+// 	--color-bg-0: rgb(202, 216, 228);
+// 	--color-bg-1: hsl(209, 36%, 86%);
+// 	--color-bg-2: hsl(224, 44%, 95%);
+// 	--color-theme-1: #ff3e00;
+// 	--color-theme-2: #4075a6;
+// 	--color-text: rgba(0, 0, 0, 0.7);
+// 	--column-width: 42rem;
+// 	--column-margin-top: 4rem;
+// 	font-family: var(--font-body);
+// 	color: var(--color-text);
+// }
+
+ul.lista-estrella {
+	list-style-image: url('star.png');
+}
+
+// body {
+// 	min-height: 100vh;
+// 	margin: 0;
+// 	background-attachment: fixed;
+// 	background-color: $color-bg;
+// 	background-size: 100vw 100vh;
+// }
+
+html,
+body {
+	margin: 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: $color-bg;
 }

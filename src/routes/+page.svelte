@@ -1,14 +1,15 @@
 <script>
-	import servicios from '$lib/data/servicios.json'
+	import servicios from '$lib/data/servicios.yaml'
+
 </script>
 
 <section>
-	<h1>{servicios.descripcion}</h1>
+	<h1 class="titulo-pagina">{servicios.titulo}</h1>
+	<p>{servicios.descripcion}</p>
 	<ul class="lista-estrella">
 		{#each servicios.servicios as servicio}
 			<li>
-				<h5>{servicio.titulo}</h5>
-				<span>${servicio.precio}</span>
+				<h3>{servicio.titulo} <small>(${servicio.precio} MXN)</small></h3>
 				<p>{servicio.descripcion}</p>
 			</li>
 		{/each}
@@ -16,13 +17,6 @@
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
 
 	h1 {
 		width: 100%;

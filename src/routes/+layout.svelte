@@ -1,13 +1,21 @@
 <script>
+	import IconButton from '../components/IconButton.svelte'
+	import IconClose from 'carbon-icons-svelte/lib/Close.svelte'
+	import IconMenu from 'carbon-icons-svelte/lib/Menu.svelte'
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import nav from '$lib/data/nav.json'
-	import contacto from '$lib/data/contacto.json'
+	import nav from '$lib/data/nav.yaml'
 	import './styles.scss';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
+
+	let reveal = false
+
+	const toggleNav = (open = !reveal) => {
+		reveal = open
+	}
 
 	$: if (browser && data?.analyticsId) {
 		webVitals({
@@ -25,39 +33,51 @@
 	<meta name="description" content={currentNavItem?.descripcion} />
 </svelte:head>
 <div class="app">
-	<nav>
-		<ul>
-			{#each nav.navigacion as navItem}
-				<li aria-current={($page.url.pathname === navItem.url )? 'true' : undefined}>
-					<a href={navItem.url}>{navItem.titulo}</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
+	<header>
+		<div class="material flex-spread">
+			<h1 class="title">{nav.titulo}</h1>
+			<nav class={reveal ? 'reveal' : 'hide'}>
+				<div class="flex-spread mobile-only">
+					<h1 class="title">{nav.titulo}</h1>
+					<div class="icon-container">
+						<IconButton on:click={() => toggleNav(false)}>
+							<IconClose class="nav-icon" />
+						</IconButton>
+					</div>
+				</div>
+				<ul>
+					{#each nav.navigacion as navItem}
+						<li aria-current={($page.url.pathname === navItem.url )? 'true' : undefined}>
+							<a href={navItem.url} on:click={() => toggleNav(false)}>{navItem.titulo}</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+			<div class="nav-reveal mobile-only icon-container">
+				<IconButton on:click={() => toggleNav(true)}>
+					<IconMenu class="nav-icon" />
+				</IconButton>
+			</div>
+		</div>
+	</header>
 	<main>
-		<slot />
+		<div class="material">
+			<slot />
+		</div>
 	</main>
-	<footer>
-		<p>Llama <b>{contacto.numero}</b> para contactar {contacto.nombre} por una lectura</p>
-	</footer>
+	<!-- <footer>
+		<div class="material">
+			<p>Llama <b>{contacto.numero}</b> para contactar {contacto.nombre} por una lectura</p>
+		</div>
+	</footer> -->
 </div>
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
+		max-width: 600px;
 		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
 	}
 
 	footer {
@@ -77,4 +97,5 @@
 			padding: 12px 0;
 		}
 	}
+
 </style>

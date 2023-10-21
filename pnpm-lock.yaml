@@ -5,9 +5,24 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@fontsource/bungee-shade':
+    specifier: ^5.0.15
+    version: 5.0.15
   '@fontsource/fira-mono':
     specifier: ^4.5.10
     version: 4.5.10
+  '@fontsource/monoton':
+    specifier: ^5.0.15
+    version: 5.0.15
+  '@fontsource/pirata-one':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/saira-stencil-one':
+    specifier: ^5.0.15
+    version: 5.0.15
+  '@modyfi/vite-plugin-yaml':
+    specifier: ^1.0.4
+    version: 1.0.4(vite@4.3.8)
   '@neoconfetti/svelte':
     specifier: ^1.0.0
     version: 1.0.0
@@ -23,6 +38,12 @@ devDependencies:
   '@types/cookie':
     specifier: ^0.5.1
     version: 0.5.1
+  carbon-components-svelte:
+    specifier: ^0.81.0
+    version: 0.81.0
+  carbon-icons-svelte:
+    specifier: ^12.3.0
+    version: 12.3.0
   eslint:
     specifier: ^8.28.0
     version: 8.41.0
@@ -297,8 +318,24 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@fontsource/bungee-shade@5.0.15:
+    resolution: {integrity: sha512-+5CqTy5WH/C1zrjgUx8h2kEIGOlr53wrRaomrvEFWRH1/bAJSKiJV+X942gBtoI4XHAWuJbmxfHR6PtsLRDmxA==}
+    dev: true
+
   /@fontsource/fira-mono@4.5.10:
     resolution: {integrity: sha512-bxUnRP8xptGRo8YXeY073DSpfK74XpSb0ZyRNpHV9WvLnJ7TwPOjZll8hTMin7zLC6iOp59pDZ8EQDj1gzgAQQ==}
+    dev: true
+
+  /@fontsource/monoton@5.0.15:
+    resolution: {integrity: sha512-Y2GpXsxinIgybLGIhU3JW6RPY6y38s3n+rzdntQ8zWiqsor6mJP43Wlb+UNxWhK3kPBh54QaqYC7Cc2b8MAqpg==}
+    dev: true
+
+  /@fontsource/pirata-one@5.0.8:
+    resolution: {integrity: sha512-kv+/j0u2Yh8ZQ06t1Jpld/ZPGGZgpKqY6g9nRXJKhRTVmzK7rLwPMolYLJmtSSKKuc8zK7F8660PnBVDN58nfg==}
+    dev: true
+
+  /@fontsource/saira-stencil-one@5.0.15:
+    resolution: {integrity: sha512-YHBstWm/P2eUaRYg+Ix387aGxtjLg4UFjVBNsIOpudOmbSoEj+SzfmDg6MSgyf7duYPQRk4z8i2a3vasvaDjdQ==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.8:
@@ -359,6 +396,19 @@ packages:
       - supports-color
     dev: true
 
+  /@modyfi/vite-plugin-yaml@1.0.4(vite@4.3.8):
+    resolution: {integrity: sha512-qkT0KiR3AQQRfUvDzLv4+1rYAzXj+QmGhAbyUd0Ordf9xynK76i758lk5GiEfxuQxbvdqDaJ9oXkH/KacbSjQQ==}
+    peerDependencies:
+      vite: ^2.6.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      js-yaml: 4.1.0
+      tosource: 2.0.0-alpha.3
+      vite: 4.3.8(@types/node@20.2.3)(sass@1.69.3)
+    transitivePeerDependencies:
+      - rollup
+    dev: true
+
   /@neoconfetti/svelte@1.0.0:
     resolution: {integrity: sha512-SmksyaJAdSlMa9cTidVSIqYo1qti+WTsviNDwgjNVm+KQ3DRP2Df9umDIzC4vCcpEYY+chQe0i2IKnLw03AT8Q==}
     dev: true
@@ -403,6 +453,20 @@ packages:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
     dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@rollup/pluginutils@5.0.2:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.2
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
@@ -479,6 +543,10 @@ packages:
 
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
+
+  /@types/estree@1.0.2:
+    resolution: {integrity: sha512-VeiPZ9MMwXjO32/Xu7+OwflfmeoRwkE/qzndw42gGtgJwZopBnzy2gD//NN1+go1mADzkDcqf/KnFRSjTJ8xJA==}
     dev: true
 
   /@types/node@20.2.3:
@@ -638,6 +706,16 @@ packages:
   /callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+    dev: true
+
+  /carbon-components-svelte@0.81.0:
+    resolution: {integrity: sha512-yMjE1I88tuPh50d9WR0IHaHQDk4CDlRHxg9xRWOMzcsMJg+aycsHfqHchEfgoSHz4kir6kUdCtknX0oFYYM+LA==}
+    dependencies:
+      flatpickr: 4.6.9
+    dev: true
+
+  /carbon-icons-svelte@12.3.0:
+    resolution: {integrity: sha512-RZI1nJEjnpgBka4A6zwEkNNqYfV9H7WjcyQ4JYPLoMO8a7N7mAVbaG9ngHUEahxf/byaHBp+EJD3Natf1dkylQ==}
     dev: true
 
   /chai@4.3.7:
@@ -1017,6 +1095,10 @@ packages:
     dependencies:
       flatted: 3.2.7
       rimraf: 3.0.2
+    dev: true
+
+  /flatpickr@4.6.9:
+    resolution: {integrity: sha512-F0azNNi8foVWKSF+8X+ZJzz8r9sE1G4hl06RyceIaLvyltKvDl6vqk9Lm/6AUUCi5HWaIjiUbk7UpeE/fOXOpw==}
     dev: true
 
   /flatted@3.2.7:
@@ -1912,6 +1994,11 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: true
+
+  /tosource@2.0.0-alpha.3:
+    resolution: {integrity: sha512-KAB2lrSS48y91MzFPFuDg4hLbvDiyTjOVgaK7Erw+5AmZXNq4sFRVn8r6yxSLuNs15PaokrDRpS61ERY9uZOug==}
+    engines: {node: '>=10'}
     dev: true
 
   /totalist@3.0.1:

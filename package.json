@@ -1,5 +1,6 @@
 {
-	"name": "sveltekit-2",
+	"name": "sirena-tarot",
+	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -13,12 +14,19 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@fontsource/bungee-shade": "^5.0.15",
 		"@fontsource/fira-mono": "^4.5.10",
+		"@fontsource/monoton": "^5.0.15",
+		"@fontsource/pirata-one": "^5.0.8",
+		"@fontsource/saira-stencil-one": "^5.0.15",
+		"@modyfi/vite-plugin-yaml": "^1.0.4",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-vercel": "^3.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@types/cookie": "^0.5.1",
+		"carbon-components-svelte": "^0.81.0",
+		"carbon-icons-svelte": "^12.3.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
@@ -31,6 +39,5 @@
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3",
 		"web-vitals": "^3.3.1"
-	},
-	"type": "module"
+	}
 }
