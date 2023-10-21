@@ -32,7 +32,7 @@
 	<title>{nav.descripcion} - {currentNavItem?.titulo}</title>
 	<meta name="description" content={currentNavItem?.descripcion} />
 </svelte:head>
-<div class="app">
+<div class="app" on:click={() => toggleNav(false)} on:keyup={() => toggleNav(false)}>
 	<header>
 		<div class="material flex-spread">
 			<h1 class="title">{nav.titulo}</h1>
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 	</header>
-	<main on:click={() => toggleNav(false)}>
+	<main>
 		<div class="material">
 			<slot />
 		</div>

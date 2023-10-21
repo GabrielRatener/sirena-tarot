@@ -3,13 +3,17 @@
 
   const dispatch = createEventDispatcher()
 
-  const click = () => {
+  // @ts-ignore
+  const click = (e) => {
+    e.stopPropagation()
+    e.preventDefault()
+
     dispatch('click', {})
   }
 </script>
 <div class="icon-button"
-  on:click={() => click()}
-  on:keyup={() => click()}
+  on:click={(e) => click(e)}
+  on:keyup={(e) => click(e)}
 >
   <slot />
 </div>
