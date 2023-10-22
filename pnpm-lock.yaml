@@ -17,6 +17,12 @@ devDependencies:
   '@fontsource/monoton':
     specifier: ^5.0.15
     version: 5.0.15
+  '@fortawesome/free-brands-svg-icons':
+    specifier: ^6.4.2
+    version: 6.4.2
+  '@fortawesome/free-solid-svg-icons':
+    specifier: ^6.4.2
+    version: 6.4.2
   '@modyfi/vite-plugin-yaml':
     specifier: ^1.0.4
     version: 1.0.4(vite@4.3.8)
@@ -62,9 +68,15 @@ devDependencies:
   svelte:
     specifier: ^3.54.0
     version: 3.59.1
+  svelte-awesome-icons:
+    specifier: ^0.6.6
+    version: 0.6.6(svelte@3.59.1)
   svelte-check:
     specifier: ^3.0.1
     version: 3.3.2(postcss@8.4.23)(sass@1.69.3)(svelte@3.59.1)
+  svelte-fa:
+    specifier: ^3.0.4
+    version: 3.0.4
   typescript:
     specifier: ^5.0.0
     version: 5.0.4
@@ -329,6 +341,28 @@ packages:
 
   /@fontsource/monoton@5.0.15:
     resolution: {integrity: sha512-Y2GpXsxinIgybLGIhU3JW6RPY6y38s3n+rzdntQ8zWiqsor6mJP43Wlb+UNxWhK3kPBh54QaqYC7Cc2b8MAqpg==}
+    dev: true
+
+  /@fortawesome/fontawesome-common-types@6.4.2:
+    resolution: {integrity: sha512-1DgP7f+XQIJbLFCTX1V2QnxVmpLdKdzzo2k8EmvDOePfchaIGQ9eCHj2up3/jNEbZuBqel5OxiaOJf37TWauRA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: true
+
+  /@fortawesome/free-brands-svg-icons@6.4.2:
+    resolution: {integrity: sha512-LKOwJX0I7+mR/cvvf6qIiqcERbdnY+24zgpUSouySml+5w8B4BJOx8EhDR/FTKAu06W12fmUIcv6lzPSwYKGGg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.4.2
+    dev: true
+
+  /@fortawesome/free-solid-svg-icons@6.4.2:
+    resolution: {integrity: sha512-sYwXurXUEQS32fZz9hVCUUv/xu49PEJEyUOsA51l6PU/qVgfbTb2glsTEaJngVVT8VqBATRIdh7XVgV1JF1LkA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.4.2
     dev: true
 
   /@humanwhocodes/config-array@0.11.8:
@@ -1840,6 +1874,14 @@ packages:
       has-flag: 4.0.0
     dev: true
 
+  /svelte-awesome-icons@0.6.6(svelte@3.59.1):
+    resolution: {integrity: sha512-pTmLfcxUPpMjenGoPA2YuRFu+RS71symV45s96bNMYLmxjx8L44HhHPW7Wrw7xVay7FVMPSsw7UgIjio8njhEA==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0
+    dependencies:
+      svelte: 3.59.1
+    dev: true
+
   /svelte-check@3.3.2(postcss@8.4.23)(sass@1.69.3)(svelte@3.59.1):
     resolution: {integrity: sha512-67j3rI0LDc2DvL0ON/2pvCasVVD3nHDrTkZNr4eITNfo2oFXdw7SIyMOiFj4swu+pjmFQAigytBK1IWyik8dBw==}
     hasBin: true
@@ -1880,6 +1922,10 @@ packages:
       eslint-visitor-keys: 3.4.1
       espree: 9.5.2
       svelte: 3.59.1
+    dev: true
+
+  /svelte-fa@3.0.4:
+    resolution: {integrity: sha512-y04vEuAoV1wwVDItSCzPW7lzT6v1bj/y1p+W1V+NtIMpQ+8hj8MBkx7JFD7JHSnalPU1QiI8BVfguqheEA3nPg==}
     dev: true
 
   /svelte-hmr@0.15.1(svelte@3.59.1):

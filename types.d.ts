@@ -15,6 +15,7 @@ declare module "$lib/data/contacto.yaml" {
 	export const nombre: string;
 	export const numero: string;
 	export const email: string;
+	export const instagram: string;
 }
 
 declare module "$lib/data/nav.yaml" {

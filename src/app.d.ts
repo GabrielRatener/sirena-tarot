@@ -9,14 +9,4 @@ declare global {
 	}
 }
 
-declare module "./src/lib/data/bio.yaml" {
-	interface Seccion {
-		titulo: string;
-		descripcion: string;
-	}
-
-	export const descripcion: string;
-	export const secciones: Seccion[];
-}
-
 export {};
