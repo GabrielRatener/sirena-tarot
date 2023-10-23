@@ -2,10 +2,10 @@
 titulo: "Sirena Tarot"
 descripcion: "Sirena Tarot"
 navigacion:
-  -
-    titulo: "Servicios"
-    url: "/"
-    descripcion: "Servicios de lectura"
+  # -
+  #   titulo: "Servicios"
+  #   url: "/"
+  #   descripcion: "Servicios de lectura"
   -
     titulo: "Quien Soy"
     url: "/quien-soy"
@@ -14,3 +14,7 @@ navigacion:
     titulo: "Contacto"
     url: "/contacto"
     descripcion: "Contactame"
+  -
+    titulo: "Eventos"
+    url: "/eventos"
+    descripcion: "Eventos de tarot"

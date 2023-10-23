@@ -60,6 +60,11 @@ header .material {
 	text-decoration-style: dotted;
 	text-decoration-thickness: 13px;
 	text-decoration-color: $color-theme;
+
+	> a {
+		text-decoration: unset;
+		color: unset;
+	}
 }
 
 .titulo-pagina {
@@ -259,4 +264,11 @@ body {
 	.center-box-content {
 		max-width: 100%;
 	}
+}
+
+.cool-link {
+	font-size: 1em;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-underline-offset: 5px;
 }

@@ -35,7 +35,7 @@
 <div class="app" on:click={() => toggleNav(false)} on:keyup={() => toggleNav(false)}>
 	<header>
 		<div class="material flex-spread">
-			<h1 class="title">{nav.titulo}</h1>
+			<h1 class="title"><a href="/">{nav.titulo}</a></h1>
 			<nav class={reveal ? 'reveal' : 'hide'}>
 				<div class="flex-spread mobile-only">
 					<h1 class="title">{nav.titulo}</h1>

@@ -41,3 +41,9 @@ declare module "$lib/data/servicios.yaml" {
 	export const descripcion: string;
 	export const servicios: Servicio[];
 }
+
+declare module "$lib/data/eventos.yaml" {
+	export const titulo: string;
+	export const descripcion: string;
+	export const calendarId: string;
+}
