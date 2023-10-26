@@ -1,7 +1,7 @@
 <script>
   // @ts-nocheck
   import Fa from 'svelte-fa'
-  import { faLocationPin, faClock } from '@fortawesome/free-solid-svg-icons';
+  import { faLocationDot, faClock } from '@fortawesome/free-solid-svg-icons';
   import eventos from '$lib/data/eventos.yaml'
   import { formatEventTime, getLocationHead } from '$lib/utils'
   
@@ -25,7 +25,7 @@
           {/each}
         </span>
         <br>
-        <Fa icon={faLocationPin} scale={1.1} translateY={0.35} style="vertical-align: top" />
+        <Fa icon={faLocationDot} scale={1.1} translateY={0.35} style="vertical-align: top" />
         <a
           target="blank"
           class="post-icon cool-link"
