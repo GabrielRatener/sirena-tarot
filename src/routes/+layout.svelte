@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<ul>
-					{#each nav.navigacion as navItem}
+					{#each nav.navigacion.slice(1) as navItem}
 						<li aria-current={($page.url.pathname === navItem.url )? 'true' : undefined}>
 							<a href={navItem.url} on:click={() => toggleNav(false)}>{navItem.titulo}</a>
 						</li>
