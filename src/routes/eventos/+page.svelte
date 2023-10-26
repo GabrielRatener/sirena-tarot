@@ -1,7 +1,7 @@
 <script>
   // @ts-nocheck
   import Fa from 'svelte-fa'
-  import { faMapPin, faClock } from '@fortawesome/free-solid-svg-icons';
+  import { faLocationPin, faClock } from '@fortawesome/free-solid-svg-icons';
   import eventos from '$lib/data/eventos.yaml'
   import { formatEventTime, getLocationHead } from '$lib/utils'
   
@@ -15,11 +15,24 @@
     {#each data.events as event}
       <li>
         <h3>{event.titulo}</h3>
-        <Fa icon={faClock} scale={1.1} />
-        <span class="post-icon">{formatEventTime(event.dias, event.start, event.end)}</span>
-        <br/>
-        <Fa icon={faMapPin} scale={1.1} />
-        <a target="blank" class="post-icon cool-link" href={`https://maps.google.com/?q=${event.ubicacion}`}>{getLocationHead(event.ubicacion)}</a>
+        <Fa icon={faClock} scale={1.1} translateY={0.35} style="vertical-align: top" />
+        <span class="post-icon">
+          {#each formatEventTime(event) as part, index}
+            {#if index > 0}
+              <br class="mobile-only" />
+            {/if}
+            <span>{part}</span>
+          {/each}
+        </span>
+        <br>
+        <Fa icon={faLocationPin} scale={1.1} translateY={0.35} style="vertical-align: top" />
+        <a
+          target="blank"
+          class="post-icon cool-link"
+          href={`https://maps.google.com/?q=${event.ubicacion}`}
+        >
+          {getLocationHead(event.ubicacion)}
+        </a>
         {#if event.descripcion}
           <p>{event.descripcion}</p>
         {/if}
@@ -34,9 +47,12 @@
     margin-left: 10px;
   }
 
-  a.post-icon {
+  a.cool-link {
     color: black;
-    
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
   }
 
 </style>

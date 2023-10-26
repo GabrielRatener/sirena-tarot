@@ -1,5 +1,10 @@
 import axios from 'axios'
 import dayjs from 'dayjs'
+import utcPlugin from 'dayjs/plugin/utc'
+import tzPlugin from 'dayjs/plugin/timezone'
+
+dayjs.extend(utcPlugin)
+dayjs.extend(tzPlugin)
 
 const dayNames = [
   "Domingo",
@@ -82,8 +87,8 @@ export const calendarEvents = async (key, calendarId) => {
     })
 }
 
-const dia = (date) => {
-  const index = parseInt(dayjs(date).format('d'))
+const dia = (date, tz) => {
+  const index = parseInt(dayjs(date).tz(tz).format('d'))
 
   return dayNames[index]
 }
@@ -98,9 +103,9 @@ export const getLocationHead = (string) => {
   return first
 }
 
-export const formatEventTime = (dias, start, end) => {
-  const startDate = dayjs(start)
-  const endDate = dayjs(end)
+export const formatEventTime = ({ dias, start, end, tz }) => {
+  const startDate = dayjs(start).tz(tz)
+  const endDate = dayjs(end).tz(tz)
   const timeRange = [
     startDate.format('h:mm A'),
     endDate.format('h:mm A')
@@ -112,12 +117,12 @@ export const formatEventTime = (dias, start, end) => {
 
   switch (dias.length) {
     case 0:
-      return `${dia(start)} ${startDate.format('MMM DD')} ${timeRange}`
+      return [`${dia(start, tz)} ${startDate.format('MMM DD')}`, timeRange]
     case 1:
-      return `${diasPlural[0]} ${timeRange}`
+      return [diasPlural[0], timeRange]
     case 2:
-      return `${diasPlural.join(' y ')} ${timeRange}`
+      return [diasPlural.join(' y '), timeRange]
     default:
-      return `${diasPlural.join(', ')} ${timeRange}`
+      return [diasPlural.join(', '), timeRange]
   }
 }
