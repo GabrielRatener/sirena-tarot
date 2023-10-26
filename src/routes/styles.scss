@@ -184,13 +184,6 @@ nav ul li a {
 			padding: 20px;
 		}
 
-		.icon-container {
-			& > * {
-				height: 15px;
-				max-height: 15px;
-			}
-		}
-
 		&.hide {
 			display: none;
 		}

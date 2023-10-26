@@ -6,19 +6,22 @@
   // @ts-ignore
   const click = (e) => {
     e.stopPropagation()
-    e.preventDefault()
 
     dispatch('click', {})
   }
+
 </script>
-<div class="icon-button"
+<button class="icon-button"
   on:click={(e) => click(e)}
   on:keyup={(e) => click(e)}
 >
   <slot />
-</div>
+</button>
 <style>
   .icon-button {
     display: inline-block;
+    background-color: transparent;
+    border-width: 0px;
+    outline: none;
   }
 </style>
