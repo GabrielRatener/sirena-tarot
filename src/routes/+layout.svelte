@@ -38,7 +38,7 @@
 			<h1 class="title"><a href="/">{nav.titulo}</a></h1>
 			<nav class={reveal ? 'reveal' : 'hide'}>
 				<div class="flex-spread mobile-only">
-					<h1 class="title">{nav.titulo}</h1>
+					<h1 class="title"><a href="/">{nav.titulo}</a></h1>
 					<div class="icon-container">
 						<IconButton on:click={() => toggleNav(false)}>
 							<IconClose class="nav-icon" />
