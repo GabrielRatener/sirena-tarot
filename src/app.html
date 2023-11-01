@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z746GS6ZF8"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
 
-			gtag('config', 'G-Z746GS6ZF8');
+			// only track if on main site
+			if (window.location.hostname.endsWith('sirenatarot.com')) {
+				gtag('js', new Date());
+				gtag('config', 'G-Z746GS6ZF8');
+			}
 		</script>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- Google tag (gtag.js) -->
 		<script src="animate.js"></script>
 		%sveltekit.head%
 	</head>
