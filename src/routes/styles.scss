@@ -250,6 +250,11 @@ body {
 	background-color: $color-bg;
 }
 
+body {
+	background-image: url('../lib/images/site-bg.jpeg');
+	background-size: cover;
+}
+
 .center-box {
 	display: flex;
 	justify-content: center;
