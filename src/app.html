@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z746GS6ZF8"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-
 			// only track if on main site
 			if (window.location.hostname.endsWith('sirenatarot.com')) {
+				const id = 'G-Z746GS6ZF8'
+				const gtmScript = document.createElement('script')
+				gtmScript.setAttribute('async', "")
+				gtmScript.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${id}`)
+
+				document.head.appendChild(gtmScript)
+
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+
 				gtag('js', new Date());
-				gtag('config', 'G-Z746GS6ZF8');
+				gtag('config', id);
 			}
 		</script>
 		<meta charset="utf-8" />
