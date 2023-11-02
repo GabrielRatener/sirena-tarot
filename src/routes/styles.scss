@@ -60,9 +60,13 @@ header .material {
 	text-decoration-style: dotted;
 	text-decoration-thickness: 13px;
 	text-decoration-color: $color-theme;
+	text-underline-offset: 5px;
 
 	> a {
-		text-decoration: unset;
+		text-decoration: inherit;
+		text-decoration-style: inherit;
+		text-decoration-color: inherit;
+		text-underline-offset: inherit;
 		color: unset;
 	}
 }
