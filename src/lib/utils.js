@@ -35,6 +35,11 @@ const formatters = [
   }
 ]
 
+export const toQuery = (params) =>
+  Object.entries(params)
+    .map(([param, value]) => `${param}=${value}`)
+    .join('&')
+
 export const formatNumber = (number, withCountry = true) => {
   const code =
     number.slice(0, 3)
@@ -47,8 +52,13 @@ export const formatNumber = (number, withCountry = true) => {
 }
 
 export const calendarEvents = async (key, calendarId) => {
+  const paramString = toQuery({
+    key,
+    timeMin: dayjs().toISOString()
+  })
+
   const url =
-    `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${key}`
+    `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?${paramString}`
   const response = await axios({ url })
   return response.data.items
     .filter((item) => item.status === 'confirmed')

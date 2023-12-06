@@ -46,4 +46,5 @@ declare module "$lib/data/eventos.yaml" {
 	export const titulo: string;
 	export const descripcion: string;
 	export const calendarId: string;
+	export const noHay: string;
 }

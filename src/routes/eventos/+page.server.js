@@ -6,6 +6,12 @@ import { calendarEvents } from '../../lib/utils';
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
+export const config = {
+  isr: {
+    expiration: 60
+  }
+}
+
 export async function load() {
   try {
     const events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
