@@ -1,6 +1,7 @@
 <script>
   // @ts-nocheck
   import Fa from 'svelte-fa'
+  import dayjs from 'dayjs'
   import { faLocationDot, faClock } from '@fortawesome/free-solid-svg-icons';
   import eventos from '$lib/data/eventos.yaml'
   import contacto from '$lib/data/contacto.yaml'
@@ -11,6 +12,7 @@
 </script>
 <section>
 	<h1 class="titulo-pagina">{eventos.titulo}</h1>
+  <span style="display: none;">testing: {dayjs().format('DD/MM/YYYY hh:mm:ss')}</span>
   {#if data.events.length > 0}
     <p>{eventos.descripcion}</p>
     <ul class="contactos lista-estrella">
