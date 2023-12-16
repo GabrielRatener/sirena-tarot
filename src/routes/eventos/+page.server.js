@@ -10,7 +10,7 @@ export const prerender = 'auto'
 
 export const config = {
   isr: {
-    expiration: 24 * 60
+    expiration: 60
   }
 }
 
