@@ -18,7 +18,7 @@
 </script>
 <section>
 	<h1 class="titulo-pagina">{eventos.titulo}</h1>
-  <span style="display: none;">testing: {data.timestamp}</span>
+  <span style="display: none;">testing: {data.timestamp} ${data.expires} ${time > data.expires}</span>
   {#if data.events.length > 0}
     <p>{eventos.descripcion}</p>
     <ul class="contactos lista-estrella">
