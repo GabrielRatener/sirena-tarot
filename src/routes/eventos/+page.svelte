@@ -2,23 +2,16 @@
   // @ts-nocheck
   import Fa from 'svelte-fa'
   import { faLocationDot, faClock } from '@fortawesome/free-solid-svg-icons';
-  import { invalidate } from '$app/navigation'
   import eventos from '$lib/data/eventos.yaml'
   import contacto from '$lib/data/contacto.yaml'
   import { formatEventTime, getLocationHead } from '$lib/utils'
   
-  const time = Date.now()
-
 	export let data;
-
-  if (time > data.expires) {
-    invalidate(`ts:${data.timestamp}`)
-  }
 
 </script>
 <section>
 	<h1 class="titulo-pagina">{eventos.titulo}</h1>
-  <span style="display: none;">testing: {data.timestamp} ${data.expires} ${time > data.expires}</span>
+  <span style="display: none;">testing: {data.timestamp}</span>
   {#if data.events.length > 0}
     <p>{eventos.descripcion}</p>
     <ul class="contactos lista-estrella">

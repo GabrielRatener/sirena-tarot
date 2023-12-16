@@ -1,5 +1,4 @@
 
-import dayjs from 'dayjs'
 import eventos from '$lib/data/eventos.yaml'
 import { env } from '$env/dynamic/private'
 import { calendarEvents } from '../../lib/utils'
@@ -12,14 +11,13 @@ export const prerender = true
 
 export async function load({ depends }) {
   const timestamp = Date.now()
-  const expires = timestamp + expiration * 1000
   let events = []
 
-  depends(`ts:${timestamp}`)
+  depends('calendar:load')
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
   } finally {
-    return { events, timestamp, expires }
+    return { events, timestamp }
   }
 }
