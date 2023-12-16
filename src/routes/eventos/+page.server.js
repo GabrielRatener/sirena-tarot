@@ -4,24 +4,22 @@ import eventos from '$lib/data/eventos.yaml'
 import { env } from '$env/dynamic/private'
 import { calendarEvents } from '../../lib/utils'
 
+const expiration = 60 // in seconds
+
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = 'auto'
+export const prerender = true
 
-export const config = {
-  isr: {
-    expiration: 60
-  }
-}
+export async function load({ depends }) {
+  const timestamp = Date.now()
+  const expires = timestamp + expiration * 1000
+  let events = []
 
-export async function load() {
-  const timeVerify = dayjs().format('DD/MM/YYYY hh:mm:ss')
+  depends(`ts:${timestamp}`)
+
   try {
-    const events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
-
-    return { events, timeVerify }
-  } catch (e) {
-    return { events: [], timeVerify }
+    events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
+  } finally {
+    return { events, timestamp, expires }
   }
 }
-
