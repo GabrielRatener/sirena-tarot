@@ -5,15 +5,13 @@ import { calendarEvents } from '../../lib/utils'
 
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = true
+export const prerender = false
 
 export const config = {
   isr: {
-    isr: {
-      expiration: 60,
-      bypassToken: env.CRON_SECRET,
-      allowQuery: [env.CRON_SECRET]
-    }
+    expiration: 60,
+    bypassToken: env.CRON_SECRET,
+    allowQuery: [env.CRON_SECRET]
   }
 }
 
