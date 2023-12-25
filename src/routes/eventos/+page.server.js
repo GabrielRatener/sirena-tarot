@@ -12,13 +12,17 @@ export const config = {
     isr: {
       expiration: 60,
       bypassToken: env.CRON_SECRET,
+      allowQuery: [env.CRON_SECRET]
     }
   }
 }
 
-export async function load() {
+export async function load({ url }) {
+  const secret = url.searchParams.get(env.CRON_SECRET)
   const timestamp = Date.now()
   let events = []
+
+  console.log(`Running load function with field "${field}" = ${secret !== null ? `"${value}"` : 'null'}`)
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
