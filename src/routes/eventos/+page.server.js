@@ -10,7 +10,7 @@ export const prerender = false
 export const config = {
   isr: {
     expiration: 60,
-    bypassToken: env.CRON_SECRET,
+    bypassToken: env.BYPASS_TOKEN,
     allowQuery: [env.CRON_SECRET]
   }
 }
