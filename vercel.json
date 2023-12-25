@@ -1,6 +1,4 @@
 {
-  "buildCommand": "vite build",
-  "installCommand": "pnpm install",
   "crons": [
     {
       "path": "/api/cron",
