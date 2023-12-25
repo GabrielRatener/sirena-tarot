@@ -3,17 +3,17 @@ import eventos from '$lib/data/eventos.yaml'
 import { env } from '$env/dynamic/private'
 import { calendarEvents } from '../../lib/utils'
 
-const expiration = 60 // in seconds
-
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
 export const prerender = true
 
-export async function load({ depends }) {
+export async function load({ url }) {
+  const field = env.CRON_SECRET
+  const value = url.searchParams.get(field)
   const timestamp = Date.now()
   let events = []
 
-  depends('calendar:load')
+  console.log(`Running load function with field "${field}" = "${value}"`)
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
