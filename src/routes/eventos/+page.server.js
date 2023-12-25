@@ -5,15 +5,20 @@ import { calendarEvents } from '../../lib/utils'
 
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = false
+export const prerender = true
 
-export async function load({ url }) {
-  const field = env.CRON_SECRET
-  const value = url.searchParams.get(field)
+export const config = {
+  isr: {
+    isr: {
+      expiration: 60,
+      bypassToken: env.CRON_SECRET,
+    }
+  }
+}
+
+export async function load() {
   const timestamp = Date.now()
   let events = []
-
-  console.log(`Running load function with field "${field}" = "${value}"`)
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
