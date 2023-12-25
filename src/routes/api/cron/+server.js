@@ -1,8 +1,8 @@
 
 import { invalidate } from "$app/navigation"
 
-export function GET(req) {
-  if (req.headers.get('Authorization') === `Bearer ${process.env.CRON_SECRET}`) {
+export function GET({ request }) {
+  if (request.headers.get('Authorization') === `Bearer ${process.env.CRON_SECRET}`) {
     invalidate('calendar:load')
 
     return new Response("Success!")
