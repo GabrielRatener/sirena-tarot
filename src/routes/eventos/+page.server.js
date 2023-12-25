@@ -16,7 +16,8 @@ export const config = {
 }
 
 export async function load({ url }) {
-  const secret = url.searchParams.get(env.CRON_SECRET)
+  const field = env.CRON_SECRET
+  const secret = url.searchParams.get(field)
   const timestamp = Date.now()
   let events = []
 
