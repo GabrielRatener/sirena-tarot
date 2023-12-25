@@ -21,7 +21,7 @@ export async function load({ url }) {
   const timestamp = Date.now()
   let events = []
 
-  console.log(`Running load function with field "${field}" = ${secret !== null ? `"${value}"` : 'null'}`)
+  console.log(`Running load function with field "${field}" = ${secret !== null ? `"${secret}"` : 'null'}`)
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
