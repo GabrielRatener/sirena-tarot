@@ -9,19 +9,17 @@ export const prerender = false
 
 export const config = {
   isr: {
-    expiration: 60,
+    expiration: 60, // every minute
     bypassToken: env.BYPASS_TOKEN,
-    allowQuery: [env.CRON_SECRET]
+    allowQuery: []
   }
 }
 
-export async function load({ url }) {
-  const field = env.CRON_SECRET
-  const secret = url.searchParams.get(field)
+export async function load() {
   const timestamp = Date.now()
   let events = []
 
-  console.log(`Running load function with field "${field}" = ${secret !== null ? `"${secret}"` : 'null'}`)
+  console.log("Re-running load")
 
   try {
     events = await calendarEvents(env.GOOGLE_API_KEY, eventos.calendarId)
